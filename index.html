@@ -11,6 +11,7 @@
         body {
             background: rgb(0,53,102);
             background: linear-gradient(180deg, rgba(0,53,102,1) 0%, rgba(0,29,61,1) 100%);
+            min-height: 100vh;
         }
     </style>
 </head>
@@ -23,18 +24,16 @@
                         <h2 class="card-title text-center mb-5"><span class="iconify" data-icon="mdi:qrcode-scan"></span> GERADOR DE QR CODE</h2>
                         <form class="row g-3 form text-center" action="#" method="POST">
                             <div class="col-md-12">
-                              <label for="link-qr" class="form-label form-control-lg"><strong><span class="iconify" data-icon="icon-park-outline:copy-link"></span> Link ou Texto</strong></label>
-                              <input type="text" class="form-control border-primary" name="link-qr" id="link-qr" required>
+                              <label for="link" class="form-label form-control-lg"><strong><span class="iconify" data-icon="icon-park-outline:copy-link"></span> Link ou Texto</strong></label>
+                              <input type="text" class="form-control border-primary" name="link" id="link" required>
                             </div>
-                           
                             <div class="col-md-4 offset-md-2">
-                              <label for="width-qr" class="form-label form-control-lg"><strong><span class="iconify" data-icon="dashicons:image-flip-horizontal"></span> Largura da Imagem</strong></label>
-                              <input type="number" class="form-control" min="1" max="999" id="width-qr" required>
+                              <label for="width" class="form-label form-control-lg"><strong><span class="iconify" data-icon="dashicons:image-flip-horizontal"></span> Largura da Imagem</strong></label>
+                              <input type="number" class="form-control" min="1" max="999" id="width" required>
                             </div>
-         
                             <div class="col-md-4">
-                              <label for="height-qr" class="form-label form-control-lg"><strong><span class="iconify" data-icon="dashicons:image-flip-vertical"></span> Altura da Imagem</strong></label>
-                              <input type="number" class="form-control" min="1" max="999" id="height-qr" required>
+                              <label for="height" class="form-label form-control-lg"><strong><span class="iconify" data-icon="dashicons:image-flip-vertical"></span> Altura da Imagem</strong></label>
+                              <input type="number" class="form-control" min="1" max="999" id="height" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="background" class="form-label form-control-lg"><strong><span class="iconify" data-icon="ic:baseline-color-lens"></span> Cor de Fundo (Padrão - Branco)</strong></label>
@@ -44,41 +43,46 @@
                                 <label for="foreground" class="form-label form-control-lg"><strong><span class="iconify" data-icon="ic:outline-color-lens"></span>  Cor do Código QR (Padrão - Preto)</strong></label>
                                 <input type="color" class="offset-md-5 form-control form-control-color" id="foreground" value="#000000" title="Selecione uma cor" required>
                             </div>
-
                             <div class="col-md-8 offset-md-2">
-                                <label class="form-control-lg" for="tipo"><strong><span class="iconify" data-icon="line-md:image-twotone"></span> Selecione o tipo da imagem (PNG ou SVG)</strong></label><br>
-                                <select class="form-select text-center" aria-label="tipo" id="tipo">
+                                <label class="form-control-lg" for="type"><strong><span class="iconify" data-icon="line-md:image-twotone"></span> Selecione o Tipo da imagem (PNG ou SVG)</strong></label><br>
+                                <select class="form-select text-center" aria-label="type" id="type">
                                     <option value=".png" selected>PNG</option>
                                     <option value=".svg">SVG</option>
                                   </select>
                             </div>
-                            
-                            
                             <div class="d-grid gap-2 d-md-block">
                             <button class="btn btn-success" type="submit" ><span class="iconify" data-icon="mdi:qrcode-edit"></span> Gerar QR Code</button>
                             <button class="btn btn-secondary" type="reset"><span class="iconify" data-icon="ant-design:clear-outlined"></span> &nbsp;&nbsp;&nbsp;Limpar&nbsp;&nbsp;&nbsp;</button>
                             </div>
-
                         </form>
-                        
-                        
                     </div>
-                    
-                    <div class="card bg-transparent text-white border border-primary rounded-4 mt-2 text-center resultado" style="display: none">
+                    <div class="card bg-transparent text-white border border-primary rounded-4 mt-2 text-center result" style="display: none">
                         <div class="card-body">
-                            <h2>Resultado:</h2>
                             <div id="qrcode">
-                                
                             </div>
-                            
                         </div>
                     </div>
-                  
                 </div>
             </div>
         </div>
     </div>
 
+    <footer class=" text-center text-white">
+        <div class="container p-4 pb-0">
+          <section class="mb-3">
+            <a class="btn btn-outline-light btn-floating m-1" href="https://instagram.com/_jonasholanda" role="button" target="_blank"><span class="iconify" data-icon="line-md:instagram"></span></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="https://linkedin.com/in/jonas-holanda" role="button" target="_blank"><span class="iconify" data-icon="line-md:linkedin"></span></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/jonas-holanda" role="button" target="_blank"><span class="iconify" data-icon="line-md:github-loop"></span></a>
+          </section>
+        </div>
+        <div class="text-center pb-3">
+            <strong>
+                © <span id="date"></span> Copyright
+                <a class="text-white" href="https://github.com/jonas-holanda" target="_blank">Jonas Holanda</a>.
+                 All Rights Reserved
+            </strong>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
